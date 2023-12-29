@@ -1,0 +1,26 @@
+<!--ring div starts here-->
+<div class="parent">
+    <div class="ring">
+        <i style="--clr:#00ff0a;"></i>
+        <i style="--clr:#ff0057;"></i>
+        <i style="--clr:#fffd44;"></i>
+        <div class="login">
+          <h2>Login</h2>
+          <div class="inputBx">
+            <input type="text" [(ngModel)]="loginObj.phone" placeholder="Username">
+          </div>
+          <div class="inputBx">
+            <input type="password" [(ngModel)]="loginObj.password" placeholder="Password">
+          </div>
+          <div class="inputBx">
+            <input type="button" value="Sign in" (click)="onLogin()">
+          </div>
+          <div class="links">
+            <a href="#">Forget Password</a>
+            <a href="#">Signup</a>
+          </div>
+        </div>
+      </div>
+</div>
+
+  <!--ring div ends here-->
