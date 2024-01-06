@@ -1,0 +1,44 @@
+<div class="row">
+    <div class="col-12">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Sr No</th>
+                    <th> Name</th>
+                    <th>Mobile</th>
+                    <th>Email</th>
+                    <th>Aadhar No</th>
+                    <th>City</th>
+                    <th>Address</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let cust of customerList;let sr= index">
+                    <td> {{sr+1}}</td>
+                    <td>
+                        {{cust.name}}
+                    </td>
+                    <td>
+                        {{cust.mobileNo}}
+                    </td>
+                    <td>
+                        {{cust.email}}
+                    </td>
+                    <td>
+                        {{cust.aadharNo}}
+                    </td>
+                    <td>
+                        {{cust.city}}
+                    </td>
+                    <td>
+                        {{cust.address}}
+                    </td>
+                    <td>
+                        <button class="btn btn-sm btn-danger"  >Remove</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

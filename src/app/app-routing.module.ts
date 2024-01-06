@@ -7,6 +7,8 @@ import { NewBookingComponent } from './pages/new-booking/new-booking.component';
 import { BookingListComponent } from './pages/booking-list/booking-list.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { BookingCalenderComponent } from './pages/booking-calender/booking-calender.component';
+import { CustomerComponent } from './pages/customer/customer.component';
+import { UsersComponent } from './pages/users/users.component';
  
 
 const routes: Routes = [
@@ -42,6 +44,14 @@ const routes: Routes = [
       {
         path:'booking-calender',
         component:BookingCalenderComponent
+      },
+      {
+        path:'customers',
+        component:CustomerComponent
+      } ,
+      {
+        path:'users',
+        component:UsersComponent
       }
     ]
   }

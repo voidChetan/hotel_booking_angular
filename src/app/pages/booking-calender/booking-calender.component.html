@@ -1,1 +1,26 @@
-<p>booking-calender works!</p>
+<div class="row">
+  <div class="col-12 text-end">
+    <input type="date" (ngModelChange)="onDateChange($event)" [(ngModel)]="selectedDate" />
+  </div>
+</div>
+<table class="table">
+  <tr>
+    <td class="days" style="width:4% " placement="top" data-container="body" ngbTooltip="2222">Room
+    </td>
+    <td *ngFor="let day of dayInMonthList" class="days">
+      {{day}}
+    </td>
+  </tr>
+  <tr *ngFor="let room of allRooms" class="days">
+    <td> {{room.roomName}}</td>
+    <td *ngFor="let day of dayInMonthList; let i= index" class="days" > 
+      <div *ngIf="checkIfBooked(day,room.roomName)" [ngClass]="(checkIfBooked(day, room.roomName))? 'booked':''">
+        <i class="fa fa-bed whiet" aria-hidden="true"  title="{{checkIfBooked(day,room.roomName).name}}"></i>
+      </div>
+      <div *ngIf="!checkIfBooked(day, room.roomName)" [ngClass]="(checkIfBooked(day, room.roomName))? 'booked':''">
+        <i class="fa fa-key handicon enabl 11" aria-hidden="true"></i> 
+      </div>
+    </td>
+  </tr>
+
+</table>
