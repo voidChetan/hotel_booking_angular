@@ -1,1 +1,101 @@
-<p>new-booking works!</p>
+<div class="container">
+    <h4>New Booking</h4>
+    <div class="row">
+        <div class="col-8"> 
+            <div class="row">
+                <div class="col-3">
+                    <label>Name</label>
+                    <input type="text" class="form-control"  [(ngModel)]="bookingObj.name" />
+                </div>
+                <div class="col-3">
+                    <label>Mobile</label>
+                    <input type="text" class="form-control"  [(ngModel)]="bookingObj.mobileNo" />
+                </div>
+                <div class="col-3">
+                    <label>Email</label>
+                    <input type="text" class="form-control"  [(ngModel)]="bookingObj.email" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <label>Aadhar No</label>
+                    <input type="text" class="form-control"  [(ngModel)]="bookingObj.aadharNo" />
+                </div>
+                <div class="col-3">
+                    <label>City</label>
+                    <input type="text" class="form-control"  [(ngModel)]="bookingObj.city" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <label>Address </label>
+                    <textarea class="form-control"  [(ngModel)]="bookingObj.address"></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <label>Select Room</label>
+                    <select class="form-control"  [(ngModel)]="bookingObj.roomId">
+                        <option>Select Room</option>
+                        <option *ngFor="let room of roomList" [value]="room.roomId"> {{room.roomName}}</option>
+                    </select>
+                </div>
+                <div class="col-3">
+                    <label>Room Tarrif</label>
+                    <input type="text" class="form-control"  [(ngModel)]="bookingObj.bookingRate" />
+                </div>
+                <div class="col-3">
+                    <label>Booking From</label>
+                    <input type="date" class="form-control"  [(ngModel)]="bookingObj.bookingFromDate" />
+                </div>
+                <div class="col-3">
+                    <label>Booking To</label>
+                    <input type="date" class="form-control"  [(ngModel)]="bookingObj.bookingToDate" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <label>Booking Extra Details </label>
+                    <textarea class="form-control"  [(ngModel)]="bookingObj.naration"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="row">
+                <div class="col-6">
+                    <h6>Guest Details</h6>
+                </div>
+                <div class="col-6 text-end">
+                    <button class="btn btn-primary btn-sm text-end" (click)="addGuest()">Add New</button>
+                </div>
+            </div>
+            <div class="row pt-2">
+                <div class="col-12">
+                    <table class="table table-bordered">
+                        <tbody>
+                            <tr *ngFor="let guest of bookingObj.hotelBookingDetails;let index= index">
+                                <td>
+                                    <input type="text" class="form-control" [(ngModel)]="guest.customerName"   placeholder="Guest Name">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control"  [(ngModel)]="guest.aadharCardNo"   placeholder="Aadhar No">
+                                </td>
+                                <td>
+                                    <button class="btn btn-success" (click)="removeGuest(index)">Remove</button>
+                                </td>
+                            </tr>
+                            
+                        </tbody>
+                        
+        
+                    </table>
+                </div>
+            </div> 
+        </div>
+    </div>
+    <div class="row pt-3">
+        <div class="col-8 text-center">
+            <button class="btn btn-success" (click)="onSaveBooking()">Create New Booking</button>
+        </div>
+    </div>
+</div>

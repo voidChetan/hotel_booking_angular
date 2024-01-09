@@ -40,5 +40,9 @@ export class RoomService {
   deleteUser(id: any) {
     return this.http.delete(this.apiEndPoint + 'DeleteUserByUserId?userId=' + id);
   }
+
+  createBooking(obj: any) {
+    return this.http.post(this.apiEndPoint + 'bookroom', obj);
+  }
   
 }
